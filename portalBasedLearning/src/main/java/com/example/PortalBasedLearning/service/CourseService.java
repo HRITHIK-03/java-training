@@ -32,6 +32,7 @@ public class CourseService {
 	}
 	public List<CourseEntity> getAllCourses()
 	{
+		Logger.info("Recieved all courses");
 		return courserepoisitory.findAll();
 	}
 	
