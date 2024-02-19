@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.example.portalBasedLearning.entity.UserEntity;
 import com.example.portalBasedLearning.repository.UserRepository;
 
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @Service
 public class UserService {
 	@Autowired
@@ -17,6 +19,7 @@ public class UserService {
 	public UserEntity saveUser(UserEntity user) {
 		user.setCreatedOn(LocalDateTime.now());
 		user.setUpdatedOn(LocalDateTime.now());
+		log.info("User saved");
 		return userRepository.save(user);
 
 	}
