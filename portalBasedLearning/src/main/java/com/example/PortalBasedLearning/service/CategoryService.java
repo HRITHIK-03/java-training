@@ -15,11 +15,13 @@ public class CategoryService {
 	
 	public CategoryEntity saveCategory(CategoryEntity category)
 	{
+		log.info("Saving category: {}", category);
 		return categoryRepository.save(category);
 	}
 
 	public CategoryEntity getCategoryById(long categoryId)
 	{
+		log.info("Getting category by ID: {}", categoryId);
 		return categoryRepository.findById(categoryId).orElse(null);
 	}
 	public List<CategoryEntity> findAllCategories()
